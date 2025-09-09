@@ -24,3 +24,11 @@ We will also cover resolving many-to-many relationships and updating ER diagrams
 ![alt text](image-1.png)
 - Suppose new person came and we have gave wrong address. Dhaka branch address will be different. we need some validations like it should be Rampura.
 - This kind of table separations are called Normalizations
+
+## 43-2 Normalization and Functional Dependency
+- Normalization is a step by step process by using which we can remove any anomalies in our database
+## Functional Dependency
+- Functional dependency in simple terms means that the value of one attribute (or set of attributes) uniquely determines the value of another attribute(s) in a tabl
+![alt text](image-3.png)
+![alt text](image-5.png)
+![alt text](image-4.png)
