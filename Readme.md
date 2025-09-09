@@ -28,7 +28,37 @@ We will also cover resolving many-to-many relationships and updating ER diagrams
 ## 43-2 Normalization and Functional Dependency
 - Normalization is a step by step process by using which we can remove any anomalies in our database
 ## Functional Dependency
-- Functional dependency in simple terms means that the value of one attribute (or set of attributes) uniquely determines the value of another attribute(s) in a tabl
+- Functional dependency in simple terms means that the value of one attribute (or set of attributes) uniquely determines the value of another attribute(s) in a table        
 ![alt text](image-3.png)
 ![alt text](image-5.png)
 ![alt text](image-4.png)
+## 43-3 1NF Explained | First Normal Form with Easy Example
+#### Normal Forms
+- A set of rules applied to a database table to reduce redundancy and avoid anomalies in data by organizing it properly
+#### Type of normal forms
+- 0NF
+- 1NF
+- 2NF
+- 3NF
+
+ #### 1NF
+ Rules :
+- Atomic Values (like address Broken in small pieces like house, road, sector)
+- Unique Column Names
+- Can not have Positional dependency of data
+- Column should contain data that are of the same type
+- Determine Primary key
+![alt text](image-6.png)
+- all rules followed
+
+- lets see the table where is the problem and how to convert in 1NF
+- So far we have unique column names it ok
+- we have no positional dependency of data
+- In title we have to keep title not number
+- and in course the atomicity is not maintained here is multiple course in one field
+- lets fix this
+![alt text](image-7.png)
+- here comes the 1NF conversion
+- Still data duplication came in serial number and title
+- here we have to consider composite primary key for determining uniquely
+- These will be fixed in 2NF
