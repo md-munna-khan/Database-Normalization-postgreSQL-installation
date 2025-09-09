@@ -62,3 +62,19 @@ We will also cover resolving many-to-many relationships and updating ER diagrams
 - Still data duplication came in serial number and title
 - here we have to consider composite primary key for determining uniquely
 - These will be fixed in 2NF
+## 43-4 2NF Explained | Second Normal Form in DBMS 
+ #### 2NF
+- Rules :
+- 1 Must be 1NF
+- 2 No non-key attribute should functionally depend on part of a candidate key
+![alt text](image-8.png)
+![alt text](image-9.png)
+- Here we can see the table is in 1NF and has a composite primary key is combination of std_id, c_id. whose are also primary key
+
+- but here is a problem with table that using the partial primary key attribute c_id we can determine c_name(non key attribute). and this is not following the 2NF 2nd rule.here c_id is functionally dependent on c_name. That means c_id can determine c_name
+
+- If we want to convert in 2NF we have to separate the table because according to rule no non key attribute can not depend on the part of a candidate_key
+
+- Here comes another problem ❌lossy decomposition that means there is no relation with stud_id right now. we have to make relation.
+![alt text](image-10.png)
+✅Loss less decomposition
