@@ -96,3 +96,17 @@ x=>determine y and y===>z its y === determine z
 ![alt text](image-14.png)
 #### Database design
 ![alt text](image-15.png)
+## 43-6 Resolving Many-to-Many Relationship
+- We don't want two tables has many to many relationship because handling it becomes tough
+![alt text](image-16.png)
+- The table will look like this. this will not work because atomicity is not maintained
+![alt text](image-17.png)
+- We have to solve this. We will simply divide in rows
+![alt text](image-18.png)
+- Here Another problem arose Partial dependency came i mean using the id we cen identify the name. According to the rule of 2 NF we can not let this happen
+![alt text](image-20.png)
+- here another problem arose like too many empty fields came we can not keep anything that takes space without any reason
+- we have to make Junction Table / bridge table to make the table
+![alt text](image-21.png)
+- one ti many relation
+![alt text](image-22.png)
