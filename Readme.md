@@ -114,3 +114,12 @@ x=>determine y and y===>z its y === determine z
 ![alt text](image-23.png)
 ## Updating ER Diagram
 ![alt text](image-24.png)
+## 43-8 What is PostgreSQL?
+- The World's Most Advanced Open Source Relational Database Management System(dbms). More specifically RDBMS
+#### Why Postgres ?
+- Open Source
+- Advanced Data Types
+- Scalability
+- ACID Compliance
+- Modern
+- Indexing
