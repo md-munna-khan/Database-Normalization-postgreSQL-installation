@@ -123,3 +123,67 @@ x=>determine y and y===>z its y === determine z
 - ACID Compliance
 - Modern
 - Indexing
+## 43-9 Install PostgreSQL & Explore psql CLI  43-10 Some Postgres Commands | Add psql to PATH
+
+```bash
+\l
+```
+- This will show all the database of postgres
+![alt text](image-25.png)
+- postgres is the main database
+- template0 and template1 is used for creating another database
+- template0 is the main template because all is stored here, and the backup is template1
+- clear the terminal
+```bash
+\! cls
+```
+- \conninfo
+```bash
+\conninfo
+```
+- to see if any table is here
+```bash
+\dt 
+```
+- create a table
+```bash
+create table users (id serial primary key, name varchar(50));
+```
+![alt text](image-26.png)
+```bash
+select * from users;
+```
+![alt text](image-27.png)
+```bash
+\du
+```
+![alt text](image-28.png)
+- to see all the commands of postgres we will use
+```bash
+\?
+```
+- for exiting the postgres
+```bash
+\q
+```
+- see the version of postgres
+```bash
+select version();
+```
+- connect is different database
+```bash
+\c template1
+```
+- for running postgres in windows terminal we need to set the env variables (see previous modules)
+
+- go to c drive postgres and bin folder of version 17 then copy the path and set in environment path
+
+- open the windows terminal and run
+```bash
+psql -U postgres -d postgres
+```
+
+- create a database
+```bash
+CREATE DATABASE school;
+```
