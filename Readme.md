@@ -78,3 +78,21 @@ We will also cover resolving many-to-many relationships and updating ER diagrams
 - Here comes another problem ❌lossy decomposition that means there is no relation with stud_id right now. we have to make relation.
 ![alt text](image-10.png)
 ✅Loss less decomposition
+## 43-5 3NF Explained | Third Normal Form with Examples
+#### transitive dependency
+#### 3NF
+- Rules :
+- 1 Must be 2NF
+- 2 Must not contain transitive dependency
+x=>determine y and y===>z its y === determine z 
+![alt text](image-11.png)
+\![alt text](image-12.png)
+- Suppose X can determine Y and Y can determine Z. Technically we can determine Z indirectly using Y. Thi is Transitive Dependency.
+- In this table there is transitive dependency. because using stud_id we can determine each and every field uniquely. In this way using stud_id we can determine state. But here the problem comes state can also determine the country. This is transitive dependency. We have to mange this separating the tables.
+
+![alt text](image-13.png)
+❌lossy decomposition because you now not say which student come from which country
+✅ remove transitive dependency  the solution is add state attribute
+![alt text](image-14.png)
+#### Database design
+![alt text](image-15.png)
