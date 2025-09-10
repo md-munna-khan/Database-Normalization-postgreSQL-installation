@@ -78,3 +78,112 @@ We will also cover resolving many-to-many relationships and updating ER diagrams
 - Here comes another problem ❌lossy decomposition that means there is no relation with stud_id right now. we have to make relation.
 ![alt text](image-10.png)
 ✅Loss less decomposition
+## 43-5 3NF Explained | Third Normal Form with Examples
+#### transitive dependency
+#### 3NF
+- Rules :
+- 1 Must be 2NF
+- 2 Must not contain transitive dependency
+x=>determine y and y===>z its y === determine z 
+![alt text](image-11.png)
+\![alt text](image-12.png)
+- Suppose X can determine Y and Y can determine Z. Technically we can determine Z indirectly using Y. Thi is Transitive Dependency.
+- In this table there is transitive dependency. because using stud_id we can determine each and every field uniquely. In this way using stud_id we can determine state. But here the problem comes state can also determine the country. This is transitive dependency. We have to mange this separating the tables.
+
+![alt text](image-13.png)
+❌lossy decomposition because you now not say which student come from which country
+✅ remove transitive dependency  the solution is add state attribute
+![alt text](image-14.png)
+#### Database design
+![alt text](image-15.png)
+## 43-6 Resolving Many-to-Many Relationship
+- We don't want two tables has many to many relationship because handling it becomes tough
+![alt text](image-16.png)
+- The table will look like this. this will not work because atomicity is not maintained
+![alt text](image-17.png)
+- We have to solve this. We will simply divide in rows
+![alt text](image-18.png)
+- Here Another problem arose Partial dependency came i mean using the id we cen identify the name. According to the rule of 2 NF we can not let this happen
+![alt text](image-20.png)
+- here another problem arose like too many empty fields came we can not keep anything that takes space without any reason
+- we have to make Junction Table / bridge table to make the table
+![alt text](image-21.png)
+- one ti many relation
+![alt text](image-22.png)
+## 43-7 Updating ER Diagram Using Junction Table
+![alt text](image-23.png)
+## Updating ER Diagram
+![alt text](image-24.png)
+## 43-8 What is PostgreSQL?
+- The World's Most Advanced Open Source Relational Database Management System(dbms). More specifically RDBMS
+#### Why Postgres ?
+- Open Source
+- Advanced Data Types
+- Scalability
+- ACID Compliance
+- Modern
+- Indexing
+## 43-9 Install PostgreSQL & Explore psql CLI  43-10 Some Postgres Commands | Add psql to PATH
+
+```bash
+\l
+```
+- This will show all the database of postgres
+![alt text](image-25.png)
+- postgres is the main database
+- template0 and template1 is used for creating another database
+- template0 is the main template because all is stored here, and the backup is template1
+- clear the terminal
+```bash
+\! cls
+```
+- \conninfo
+```bash
+\conninfo
+```
+- to see if any table is here
+```bash
+\dt 
+```
+- create a table
+```bash
+create table users (id serial primary key, name varchar(50));
+```
+![alt text](image-26.png)
+```bash
+select * from users;
+```
+![alt text](image-27.png)
+```bash
+\du
+```
+![alt text](image-28.png)
+- to see all the commands of postgres we will use
+```bash
+\?
+```
+- for exiting the postgres
+```bash
+\q
+```
+- see the version of postgres
+```bash
+select version();
+```
+- connect is different database
+```bash
+\c template1
+```
+- for running postgres in windows terminal we need to set the env variables (see previous modules)
+
+- go to c drive postgres and bin folder of version 17 then copy the path and set in environment path
+
+- open the windows terminal and run
+```bash
+psql -U postgres -d postgres
+```
+
+- create a database
+```bash
+CREATE DATABASE school;
+```
