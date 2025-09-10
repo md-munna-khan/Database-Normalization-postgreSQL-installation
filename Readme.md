@@ -110,3 +110,7 @@ x=>determine y and y===>z its y === determine z
 ![alt text](image-21.png)
 - one ti many relation
 ![alt text](image-22.png)
+## 43-7 Updating ER Diagram Using Junction Table
+![alt text](image-23.png)
+## Updating ER Diagram
+![alt text](image-24.png)
